@@ -47,9 +47,21 @@ $(function () {
     });
 
     $("#confirmdelete").click(function () {
-        // #15 Get a selected product and go back to product list
-        // use $.get and winidow.location.href
-
+        // #15 Delete a selected product and go back to product list
+        // use  winidow.location.href
+        
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            data: editproduct,
+            success: function(result) {
+                //Show updated status
+                $("#modalbody").text("Updated product " + pid);
+                $('#alertModal').modal('toggle');
+                // Refresh data
+                getData();
+            }
+        });
         // ===============================
     });
 });
