@@ -8,7 +8,12 @@ var app = express();
 var cors = require('cors');       
 
 // #2 Add body-parser package to the app
-
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+var options = { useUnifiedTopology: true, useNewUrlParser: true };
+var bodyPaser = require('body-parser');
+app.use(bodyPaser.json());
+app.use(bodyPaser.urlencoded({ extended: true }));
 // ===============================
 
 
