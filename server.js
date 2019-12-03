@@ -37,7 +37,9 @@ router.get('/products', products.getAllProducts);
 router.get('/products/:pid', products.getProductById);
 
 // #4 Complete the routing for POST, PUT, DELETE
-
+router.post('/products', products.addProducts);
+router.put('/products/:pid', products.updateProductById);
+router.delete('/products/:pid', products.deleteProductById);
 // ===============================
 
 
