@@ -55,12 +55,14 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
-        $("#Addnewproduct").keyup(function(){
-            var Addnewproduct = $("#input").val();
-    $.post("demo_ajax_gethint.asp", {data:Addnewproduct},function(result){
-    $("span").html(result);
+        $("input").keyup(function(){
+            var newproduct = $("input").val();
+        $.post("url", {data:newproduct},function(result){
+        $("span").html(result);
+        
     
         // ===============================
 
     });
-})
+
+});
