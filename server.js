@@ -46,6 +46,7 @@ router.get('/products/:pid', products.getProductById);
 app.use('/api', cors(), router);
 
 // #10 Start the server
-app.listen(8080);
+app.listen(port, function () {
 // ===============================
 console.log('Magic happens on http://localhost:' + port);
+});
