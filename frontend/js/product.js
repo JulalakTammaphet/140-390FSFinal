@@ -56,13 +56,14 @@ $(function () {
         // #13 Add new products by calling api
         // use $.post
         $("input").keyup(function(){
-            var newproduct = $("input").val();
-        $.post("url", {data:newproduct},function(result){
-        $("span").html(result);
-        
+            var txt = $("input").val();
+            $.post(url, {newproduct:txt},function(result){
+            $("span").html(result);
+            })
+        });
     
         // ===============================
-
     });
+   
 
 });
